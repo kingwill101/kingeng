@@ -10,42 +10,41 @@ using namespace std;
 void mainLoop();
 SDL_Window *win;
 SDL_Renderer *renderer;
-SDL_Event event;
 
-//colors
-
-kColor kBlack = {0,0,0,0};
-kColor kRed = {225,0,0,0};
-kColor kGreen = {0, 225, 0, 0};
-kColor kBlue = {0, 0, 225, 0};
 
 
 int main()
 {
-    SDL_Init(SDL_INIT_VIDEO);
+    win = NULL;
+    renderer = NULL;
+    if (!SDL_Init(SDL_INIT_VIDEO)){
+        SDL_Quit();
+        //do something
+    }
+
     win = SDL_CreateWindow("kingeng test", 0, 0, HEIGHT, WIDTH, SDL_WINDOW_SHOWN);
+
+    if(win == NULL){
+
+        SDL_Quit();
+    }
     renderer = SDL_CreateRenderer(win, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 
+    if(renderer == NULL){
+               SDL_Quit();
+    }
     mainLoop();
     return 0;
 }
 
 void mainLoop(){
-    Object *ball = new Object();
-    ball->setCoordinate(100,100);
-    ball->setGeometry(100,100,12,123);
-    Draw *d = new Draw(renderer);
-    kvec2f linevec = {100, 100};
-    kvec2f linevec2 = {300, 300};
-
-    Image image1(renderer, win);
-    SDL_Texture *t =image1.loadTexture("data/image.bmp");
-
-    while(true){
-
+    bool done = false;
+    while(!done){
+    SDL_Event event;
         while(SDL_PollEvent(&event)){
 
             if(event.type == SDL_QUIT){
+               done = true;
                SDL_Quit();
             }
         }//event loop
@@ -53,12 +52,7 @@ void mainLoop(){
 
     SDL_SetRenderDrawColor(renderer, 23, 225, 225,1);
     SDL_RenderClear(renderer);
-    SDL_SetRenderDrawColor(renderer, 23, 12, 50,.5);
 
-   SDL_RenderCopy(renderer, t, NULL, NULL);
-   d->drawLine(linevec, linevec2, kGreen);
-   d->drawLine(10, 300, 50, 400, kRed);
-   d->drawSquare(200,200,200,200,kBlack);
 
     SDL_RenderPresent(renderer);
     }//game loop
