@@ -5,21 +5,25 @@
 class Object
 {
 public:
+
     Object();
+    void setX(kInt);
+    void setY(kInt);
+    void setWidth(kInt);
+    void setwh(kInt, kInt);//w,h
+    void setGeometry(kInt, kInt, kInt, kInt);//x,y,w,h
+    void setHeight(kInt);
+    void setCoordinate(kInt, kInt);//x,y
+    void setCoordinate(kvec2f);//{x,y}
+
+private:
+
+    kRect objRect;
     kInt getx();
     kInt gety();
     kInt getWidth();
     kInt getHeight();
     kvec2 getCoordinate();
-    kRect objRect;
-
-private:
-    void setX(kInt);
-    void setY(kInt);
-    void setWidth(kInt);
-    void setHeight(kInt);
-    void setCoordinate(kInt, kInt);
-    void setCoordinate(kvec2f);
 
 
 };

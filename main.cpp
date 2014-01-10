@@ -1,6 +1,7 @@
 #include <iostream>
 #include <draw.hpp>
 #include <image.hpp>
+#include <object.hpp>
 using namespace std;
 
 #define HEIGHT 640
@@ -30,7 +31,9 @@ int main()
 }
 
 void mainLoop(){
-
+    Object *ball = new Object();
+    ball->setCoordinate(100,100);
+    ball->setGeometry(100,100,12,123);
     Draw *d = new Draw(renderer);
     kvec2f linevec = {100, 100};
     kvec2f linevec2 = {300, 300};

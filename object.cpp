@@ -44,3 +44,10 @@ void Object::setCoordinate(kInt x, kInt y){
     objRect.x = x;
     objRect.y = y;
 }
+
+void Object::setGeometry(kInt x, kInt y, kInt w, kInt h){
+    objRect.x = x;
+    objRect.y = y;
+    objRect.w = w;
+    objRect.h = h;
+}
