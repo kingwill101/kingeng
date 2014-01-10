@@ -7,14 +7,18 @@ SOURCES += main.cpp \
     draw.cpp \
     object.cpp \
     types.cpp \
-    image.cpp
+    image.cpp \
+    audio.cpp
 
 HEADERS += \
     draw.hpp \
     types.hpp \
     object.hpp \
-    image.hpp
+    image.hpp \
+    audio.h
 
 
 unix: CONFIG += link_pkgconfig
 unix: PKGCONFIG += sdl2
+
+unix: PKGCONFIG += libvlc

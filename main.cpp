@@ -2,6 +2,8 @@
 #include <draw.hpp>
 #include <image.hpp>
 #include <object.hpp>
+#include <audio.h>
+
 using namespace std;
 
 #define HEIGHT 640
@@ -11,10 +13,14 @@ void mainLoop();
 SDL_Window *win;
 SDL_Renderer *renderer;
 
-
+Audio *player;
 
 int main()
 {
+    player = new Audio();
+    player->loadTrack("data/a.mp3");
+
+
     win = NULL;
     renderer = NULL;
     if (!SDL_Init(SDL_INIT_VIDEO)){
@@ -46,7 +52,21 @@ void mainLoop(){
             if(event.type == SDL_QUIT){
                done = true;
                SDL_Quit();
+            }else if(event.type == SDL_KEYDOWN){
+                switch(event.key.keysym.sym){
+                    case SDLK_SPACE:
+                        player->play();
+                        break;
+                     case SDLK_s:
+                        player->stop();
+                        break;
+                     case SDLK_p:
+                        player->pause();
+                        break;
+                }
+
             }
+
         }//event loop
 
 
