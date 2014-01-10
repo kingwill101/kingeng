@@ -1,16 +1,26 @@
 #ifndef OBJECT_HPP
 #define OBJECT_HPP
+#include "types.hpp"
 
 class Object
 {
 public:
     Object();
-    void getx();
-    void gety();
-    void getv2f();
-    void getIdentity();
-    void getWidth();
-    void getHeight();
+    kInt getx();
+    kInt gety();
+    kInt getWidth();
+    kInt getHeight();
+    kvec2 getCoordinate();
+    kRect objRect;
+
+private:
+    void setX(kInt);
+    void setY(kInt);
+    void setWidth(kInt);
+    void setHeight(kInt);
+    void setCoordinate(kInt, kInt);
+    void setCoordinate(kvec2f);
+
 
 };
 

@@ -13,7 +13,7 @@ HEADERS += \
     draw.hpp \
     types.hpp \
     object.hpp \
-    image.h
+    image.hpp
 
 
 unix: CONFIG += link_pkgconfig

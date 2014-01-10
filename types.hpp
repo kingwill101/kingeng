@@ -3,6 +3,7 @@
 #include <SDL2/SDL.h>
 
 typedef unsigned int kUint;
+typedef int kInt;
 typedef float kFloat;
 typedef double kDouble;
 
@@ -10,6 +11,11 @@ typedef struct{
     kFloat x;
     kFloat y;
 }kvec2f;
+
+typedef struct{
+    kInt x;
+    kInt y;
+}kvec2;
 
 
 typedef struct{
@@ -42,10 +48,9 @@ typedef struct{
 }kTriangle;
 
 typedef struct{
-   kvec2f v1;
-   kvec2f v2;
-   kFloat w;
-   kFloat h;
+   kvec2 v1;
+   kInt w;
+   kInt h;
 }kSquare;
 
 typedef struct{
@@ -60,6 +65,13 @@ typedef struct{
     kFloat b;
     kFloat a;
 }kColor;
+
+typedef struct{
+    kInt x;
+    kInt y;
+    kInt w;
+    kInt h;
+}kRect;
 
 void initializeColors();
 

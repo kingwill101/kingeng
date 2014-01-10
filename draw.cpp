@@ -18,13 +18,8 @@ kTriangle Draw::triangle(kvec2f v1, kvec2f v2, kvec2f v3){
 
 kSquare Draw::square(int x, int y, int h, int w, kColor col){
 
-    float X,Y,W,H;
-    X=x;
-    Y=y;
-    W=w;
-    H=h;
 
-    kSquare square = {X , Y, W, H};
+    kSquare square = {{x,y} ,w, h};
 
     SDL_Rect s = {x , y, w, h};
     SDL_SetRenderDrawColor(this->renderer, col.r, col.g, col.b, col.a);

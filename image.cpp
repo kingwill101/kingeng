@@ -17,12 +17,9 @@ Image::Image(SDL_Window *w){
 }
 
 SDL_Surface *Image::loadImage(std::string file) {
-/*
-    tmpImage, image = NULL;
-    tmpImage = SDL_LoadBMP(file.c_str());
-    image = SDL_ConvertSurface(tmpImage,this->win->format,NULL);
-    SDL_FreeSurface(tmpImage);
-*/
+
+    image = NULL;
+    image =  SDL_LoadBMP(file.c_str());
     return this->image;
 }
 
