@@ -17,9 +17,9 @@ public:
     SDL_Surface *image;
     SDL_Surface *tmpImage;
     SDL_Texture *tex;
-    SDL_Window *win;
-    SDL_Renderer *render;
-    SDL_Rect rect;
+    SDL_Window *win; //holds reference to a SDL_Window
+    SDL_Renderer *render; // references renderer used for drawing
+    SDL_Rect rect; // holds rec for image/texture
 };
 
 #endif // IMAGE_H

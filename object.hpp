@@ -19,11 +19,11 @@ public:
 private:
 
     kRect objRect;
-    kInt getx();
+    kInt getx(); //returns objRect.x
     kInt gety();
-    kInt getWidth();
+    kInt getWidth();//returns objRect.w
     kInt getHeight();
-    kvec2 getCoordinate();
+    kvec2 getCoordinate(); // returns {x, y}
 
 
 };

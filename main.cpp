@@ -39,7 +39,7 @@ void mainLoop(){
     kvec2f linevec2 = {300, 300};
 
     Image image1(renderer, win);
-    SDL_Texture *t =image1.loadTexture("/home/user/image.bmp");
+    SDL_Texture *t =image1.loadTexture("data/image.bmp");
 
     while(true){
 
@@ -56,9 +56,9 @@ void mainLoop(){
     SDL_SetRenderDrawColor(renderer, 23, 12, 50,.5);
 
    SDL_RenderCopy(renderer, t, NULL, NULL);
-   d->line(linevec, linevec2, kGreen);
-   d->line(10, 300, 50, 400, kRed);
-   d->square(200,200,200,200,kBlack);
+   d->drawLine(linevec, linevec2, kGreen);
+   d->drawLine(10, 300, 50, 400, kRed);
+   d->drawSquare(200,200,200,200,kBlack);
 
     SDL_RenderPresent(renderer);
     }//game loop
