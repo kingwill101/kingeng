@@ -1,5 +1,12 @@
 #include "audio.h"
 
+/*
+
+TODO
+proper error handling
+documentation
+*/
+
 Audio::Audio()
 {
     initPlayer();
@@ -7,6 +14,7 @@ Audio::Audio()
 
 Audio::~Audio(){
 
+    //cleanup time
     if(isPlaying == true){
         this->stop();
     }
@@ -19,9 +27,7 @@ void Audio::initPlayer(){
 
     this->inst = libvlc_new(0, NULL);
 
-
 }
-
 void Audio::loadTrack(std::string path){
 
     m = libvlc_media_new_path(inst, path.c_str());
