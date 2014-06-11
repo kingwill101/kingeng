@@ -22,9 +22,9 @@ kInt Object::gety(){
     return objRect.y;
 }
 
-kvec2 Object::getCoordinate(){
+kvec2f Object::getCoordinate(){
 
-    kvec2 xyRect= {objRect.x, objRect.y};
+    kvec2f xyRect= {objRect.x, objRect.y};
     return xyRect;
 }
 
@@ -48,6 +48,11 @@ void Object::setCoordinate(kInt x, kInt y){
     objRect.y = y;
 }
 
+void Object::setCoordinate(kvec2f cord){
+
+    objRect.x = cord.x;
+    objRect.y = cord.y;
+}
 void Object::setGeometry(kInt x, kInt y, kInt w, kInt h){
     objRect.x = x;
     objRect.y = y;

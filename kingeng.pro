@@ -12,7 +12,9 @@ SOURCES += main.cpp \
     types.cpp \
     player.cpp \
     block.cpp \
-    obstacle.cpp
+    obstacle.cpp \
+    camera.cpp \
+    game.cpp
 
 HEADERS += \
     draw.hpp \
@@ -23,7 +25,9 @@ HEADERS += \
     manager.hpp \
     player.hpp \
     block.h \
-    obstacle.h
+    obstacle.h \
+    camera.hpp \
+    game.hpp
 
 
 unix: CONFIG += link_pkgconfig

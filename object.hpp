@@ -27,7 +27,7 @@ public:
     kInt gety();
     kInt getWidth();//returns objRect.w
     kInt getHeight();
-    kvec2 getCoordinate(); // returns {x, y}
+    kvec2f getCoordinate(); // returns {x, y}
     SDL_Texture *loadImage(std::string fn);
     SDL_Renderer *renderer;
 
