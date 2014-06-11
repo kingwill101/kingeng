@@ -4,6 +4,9 @@ Object::Object()
 {
 }
 
+Object::~Object(){
+
+}
 
 kInt Object::getHeight(){
     return objRect.h;
@@ -50,4 +53,15 @@ void Object::setGeometry(kInt x, kInt y, kInt w, kInt h){
     objRect.y = y;
     objRect.w = w;
     objRect.h = h;
+}
+
+SDL_Texture * Object::loadImage(std::string fn){
+    SDL_Surface *temp = NULL;
+    SDL_Texture *optimized = NULL;
+
+    temp = SDL_LoadBMP(fn.c_str());
+   optimized = SDL_CreateTextureFromSurface(this->renderer,temp);
+   SDL_FreeSurface(temp);
+   return optimized;
+
 }

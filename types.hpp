@@ -75,5 +75,26 @@ typedef struct{
 
 void initializeColors();
 
+extern kColor Black;
+
+extern kColor navy;
+
+extern kColor blue	;
+
+extern kColor lime;
+
+extern kColor aqua;
+
+extern kColor maroon;
+
+extern kColor purple;
+
+extern kColor olive;
+
+extern kColor gray;
+
+extern kColor silver;
+
+extern kColor red;
 
 #endif // TYPES_H

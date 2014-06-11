@@ -1,12 +1,15 @@
 #ifndef OBJECT_HPP
 #define OBJECT_HPP
 #include "types.hpp"
+#include <SDL.h>
+#include <iostream>
 
 class Object
 {
 public:
 
     Object();
+    virtual ~ Object();
     void setX(kInt);
     void setY(kInt);
     void setWidth(kInt);
@@ -15,8 +18,9 @@ public:
     void setHeight(kInt);
     void setCoordinate(kInt, kInt);//x,y
     void setCoordinate(kvec2f);//{x,y}
+    virtual void update() = 0;
 
-private:
+
 
     kRect objRect;
     kInt getx(); //returns objRect.x
@@ -24,6 +28,8 @@ private:
     kInt getWidth();//returns objRect.w
     kInt getHeight();
     kvec2 getCoordinate(); // returns {x, y}
+    SDL_Texture *loadImage(std::string fn);
+    SDL_Renderer *renderer;
 
 
 };

@@ -6,19 +6,31 @@ CONFIG -= qt
 SOURCES += main.cpp \
     draw.cpp \
     object.cpp \
-    types.cpp \
     image.cpp \
-    audio.cpp
+    audio.cpp \
+    manager.cpp \
+    types.cpp \
+    player.cpp \
+    block.cpp \
+    obstacle.cpp
 
 HEADERS += \
     draw.hpp \
     types.hpp \
     object.hpp \
     image.hpp \
-    audio.h
+    audio.h \
+    manager.hpp \
+    player.hpp \
+    block.h \
+    obstacle.h
 
 
 unix: CONFIG += link_pkgconfig
 unix: PKGCONFIG += sdl2
 
 unix: PKGCONFIG += libvlc
+
+OTHER_FILES += \
+    level/level1.txt
+CONFIG += c++11
